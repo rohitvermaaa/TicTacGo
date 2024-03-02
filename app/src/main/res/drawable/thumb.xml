@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Checked State -->
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- Background Oval Shape -->
+            <item android:top="2dp" android:right="2dp" android:bottom="2dp" android:left="2dp">
+                <shape android:shape="oval">
+                    <solid android:color="#FCF3BB"/>
+                    <size android:width="27dp" android:height="27dp"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_sun"
+                android:gravity="center"
+                />
+        </layer-list>
+    </item>
+
+    <!-- Unchecked State -->
+    <item android:state_checked="false">
+        <layer-list>
+            <!-- Background Oval Shape -->
+            <item android:top="2dp" android:right="2dp" android:bottom="2dp" android:left="2dp">
+                <shape android:shape="oval">
+                    <solid android:color="#030303"/>
+                    <size android:width="27dp" android:height="27dp"/>
+                </shape>
+            </item>
+            <!-- Image Icon -->
+            <item android:drawable="@drawable/ic_moon"
+                android:gravity="center" />
+        </layer-list>
+    </item>
+
+</selector>

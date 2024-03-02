@@ -13,10 +13,19 @@
         android:theme="@style/Theme.TicTacGo"
         tools:targetApi="31">
         <activity
+            android:name=".GamescreenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Material3.Dark.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.TicTacGo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,8 +39,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
-
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Material3.Dark.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

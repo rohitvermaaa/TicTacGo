@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".GamescreenActivity"
+    android:background="@color/bg_color">
 
-    <Button
-        android:id="@+id/btn_to_game"
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/uiModeSwitchCompat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Move to game activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:checked="true"
+        android:thumb="@drawable/thumb"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
-
+        app:showText="false"
+        app:track="@drawable/track"
+        android:layout_margin="10dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
