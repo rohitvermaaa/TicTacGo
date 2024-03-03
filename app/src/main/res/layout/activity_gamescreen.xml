@@ -1,22 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GamescreenActivity"
-    android:background="@color/bg_color">
+    android:background="@color/bg_color"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".GamescreenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/cardViewBgColor"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="top|center"
+                android:layout_margin="13dp"
+                android:background="@color/cardViewBgColor"
+                android:contentDescription="@string/number_of_x_wins"
+                android:src="@drawable/ic_x" />
+
+            <TextView
+                android:id="@+id/tvNumberOfXWins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/athiti_medium"
+                android:text="@string/_X_wins"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/cardViewBgColor"
+            app:cardCornerRadius="10dp"
+            >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="top|center"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/cardViewBgColor"
+                android:contentDescription="@string/draws"
+                android:src="@drawable/ic_draw" />
+
+            <TextView
+                android:id="@+id/tvNumberOfDraws"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/athiti_medium"
+                android:text="@string/draws"
+                android:textColor="@color/black"
+                android:textSize="22sp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/cardViewBgColor"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="top|center"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/cardViewBgColor"
+                android:contentDescription="@string/number_of_o_wins"
+                android:src="@drawable/ic_o" />
+
+            <TextView
+                android:id="@+id/tvNumberOfOWins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/athiti_medium"
+                android:text="@string/_0_wins"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="351dp"
+        android:layout_height="351dp"
+        app:cardBackgroundColor="@color/cardViewBgColor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- First Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    tools:fb_icon="@drawable/ic_x"
+                    android:gravity="center"
+                    app:fb_iconHeight="85dp"
+                    />
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    tools:fb_icon="@drawable/ic_o"
+                    android:gravity="center"
+                    app:fb_iconHeight="85dp"/>
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    tools:fb_icon="@drawable/ic_o"
+                    android:gravity="center"
+                    app:fb_iconHeight="85dp"/>
+            </LinearLayout>
+
+            <!-- Second Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    tools:fb_icon="@drawable/ic_o"
+                    android:gravity="center"
+                    app:fb_iconHeight="85dp"/>
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    android:gravity="center"
+                    tools:fb_icon="@drawable/ic_x"
+                    app:fb_iconHeight="85dp"
+                    />
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    tools:fb_icon="@drawable/ic_o"
+                    android:gravity="center"
+                    app:fb_iconHeight="85dp"/>
+            </LinearLayout>
+
+            <!-- Third Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    tools:fb_icon="@drawable/ic_o"
+                    android:gravity="center"
+                    app:fb_iconHeight="85dp"/>
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    tools:fb_icon="@drawable/ic_o"
+                    android:gravity="center"
+                    app:fb_iconHeight="85dp"/>
+
+                <com.github.nikartm.button.FitButton
+                    android:id="@+id/cell9"
+                    android:layout_width="0dp"
+                    app:fb_borderColor="@color/black"
+                    app:fb_borderWidth="0.6dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:fb_rippleColor="#D2D2D2"
+                    app:fb_backgroundColor="#00FFFFFF"
+                    android:gravity="center"
+                    tools:fb_icon="@drawable/ic_x"
+                    app:fb_iconHeight="85dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/uiModeSwitchCompat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:thumb="@drawable/thumb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:showText="false"
-        app:track="@drawable/track"
-        android:layout_margin="10dp"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <com.github.nikartm.button.FitButton
+            android:id="@+id/btnResetScore"
+            android:gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:fb_icon="@drawable/ic_reset"
+            app:fb_cornerRadius="100dp"
+            app:fb_rippleColor="@color/rippleColor"
+            app:fb_backgroundColor="#00FFFFFF"
+            android:layout_marginHorizontal="30dp"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/cardViewBgColor"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/ivChance"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="top|center"
+                android:layout_margin="12dp"
+                android:backgroundTint="@color/cardViewBgColor"
+                android:contentDescription="@string/whose_turn_is_it"
+                android:src="@drawable/ic_x" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:fontFamily="@font/athiti_medium"
+                android:text="@string/turn"
+                android:textColor="@color/black"
+                android:layout_marginBottom="3dp"
+                android:textSize="25sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.github.nikartm.button.FitButton
+            android:id="@+id/btnSetting"
+            android:gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:fb_icon="@drawable/ic_setting"
+            app:fb_cornerRadius="100dp"
+            app:fb_rippleColor="@color/rippleColor"
+            app:fb_backgroundColor="#00FFFFFF"
+            android:layout_marginHorizontal="30dp"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

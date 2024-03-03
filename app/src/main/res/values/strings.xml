@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TicTacGo!</string>
+    <string name="_0_wins">0 Wins</string>
+    <string name="_X_wins">0 Wins</string>
+    <string name="draws">0 Draws</string>
+    <string name="number_of_x_wins">Number of X wins</string>
+    <string name="number_of_o_wins">number of O wins</string>
+    <string name="turn">Turn</string>
+    <string name="whose_turn_is_it">Whose turn is it</string>
 </resources>
