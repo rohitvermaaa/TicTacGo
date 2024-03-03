@@ -26,14 +26,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
                 android:gravity="center">
 
 
                 <FrameLayout
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_margin="1.5dp">
+                    android:layout_margin="5dp">
 
                     <com.github.nikartm.button.FitButton
                         android:id="@+id/btnSoundOff"
@@ -65,7 +64,7 @@
                 </FrameLayout>
 
             <com.github.nikartm.button.FitButton
-                android:layout_margin="1.5dp"
+                android:layout_margin="5dp"
                 android:id="@+id/btnHome"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -80,7 +79,7 @@
                 />
 
             <com.github.nikartm.button.FitButton
-                android:layout_margin="1.5dp"
+                android:layout_margin="5dp"
                 android:id="@+id/btnContinue"
                 android:layout_width="70dp"
                 android:layout_height="70dp"

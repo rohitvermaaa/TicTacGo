@@ -23,6 +23,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageView
+                android:id="@+id/abcd"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:layout_gravity="top|center"
@@ -120,142 +121,339 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
-                <com.github.nikartm.button.FitButton
+                <FrameLayout
                     android:id="@+id/cell1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    tools:fb_icon="@drawable/ic_x"
-                    android:gravity="center"
-                    app:fb_iconHeight="85dp"
-                    />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
 
-                <com.github.nikartm.button.FitButton
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell1x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell1o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        android:visibility="invisible"
+                        app:fb_icon="@drawable/ic_o"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="1.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <FrameLayout
                     android:id="@+id/cell2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    tools:fb_icon="@drawable/ic_o"
-                    android:gravity="center"
-                    app:fb_iconHeight="85dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
 
-                <com.github.nikartm.button.FitButton
-                    android:id="@+id/cell3"
-                    android:layout_width="0dp"
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell2x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell2o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_o"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        app:fb_iconHeight="85dp" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="1.5dp"
                     android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <FrameLayout
+                    android:id="@+id/cell3"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    tools:fb_icon="@drawable/ic_o"
-                    android:gravity="center"
-                    app:fb_iconHeight="85dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell3x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell3o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_iconHeight="85dp"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_icon="@drawable/ic_o" />
+
+                </FrameLayout>
+
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/black"/>
 
             <!-- Second Row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
-                <com.github.nikartm.button.FitButton
+                <FrameLayout
                     android:id="@+id/cell4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    tools:fb_icon="@drawable/ic_o"
-                    android:gravity="center"
-                    app:fb_iconHeight="85dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
 
-                <com.github.nikartm.button.FitButton
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell4x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell4o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        android:visibility="invisible"
+                        app:fb_icon="@drawable/ic_o"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="1.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <FrameLayout
                     android:id="@+id/cell5"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    android:gravity="center"
-                    tools:fb_icon="@drawable/ic_x"
-                    app:fb_iconHeight="85dp"
-                    />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
 
-                <com.github.nikartm.button.FitButton
-                    android:id="@+id/cell6"
-                    android:layout_width="0dp"
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell5x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell5o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        android:visibility="invisible"
+                        app:fb_icon="@drawable/ic_o"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="1.5dp"
                     android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <FrameLayout
+                    android:id="@+id/cell6"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    tools:fb_icon="@drawable/ic_o"
-                    android:gravity="center"
-                    app:fb_iconHeight="85dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell6x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell6o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_iconHeight="85dp"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_icon="@drawable/ic_o" />
+
+                </FrameLayout>
+
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/black"/>
 
             <!-- Third Row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
-                <com.github.nikartm.button.FitButton
+                <FrameLayout
                     android:id="@+id/cell7"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    tools:fb_icon="@drawable/ic_o"
-                    android:gravity="center"
-                    app:fb_iconHeight="85dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
 
-                <com.github.nikartm.button.FitButton
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell7x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell7o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_o"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="1.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <FrameLayout
                     android:id="@+id/cell8"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
-                    tools:fb_icon="@drawable/ic_o"
-                    android:gravity="center"
-                    app:fb_iconHeight="85dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
 
-                <com.github.nikartm.button.FitButton
-                    android:id="@+id/cell9"
-                    android:layout_width="0dp"
-                    app:fb_borderColor="@color/black"
-                    app:fb_borderWidth="0.6dp"
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell8x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell8o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_o"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="1.5dp"
                     android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <FrameLayout
+                    android:id="@+id/cell9"
                     android:layout_weight="1"
-                    app:fb_rippleColor="#D2D2D2"
-                    app:fb_backgroundColor="#00FFFFFF"
-                    android:gravity="center"
-                    tools:fb_icon="@drawable/ic_x"
-                    app:fb_iconHeight="85dp"/>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell9x"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_icon="@drawable/ic_x"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        app:fb_iconHeight="85dp" />
+
+                    <com.github.nikartm.button.FitButton
+                        android:id="@+id/cell9o"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        app:fb_backgroundColor="#00FFFFFF"
+                        app:fb_iconHeight="85dp"
+                        app:fb_rippleColor="#D2D2D2"
+                        app:fb_icon="@drawable/ic_o" />
+
+                </FrameLayout>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -320,9 +518,7 @@
             app:fb_cornerRadius="100dp"
             app:fb_rippleColor="@color/rippleColor"
             app:fb_backgroundColor="#00FFFFFF"
-            android:layout_marginHorizontal="30dp"
-
-            />
+            android:layout_marginHorizontal="30dp"/>
 
     </LinearLayout>
 
