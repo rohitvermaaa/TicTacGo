@@ -7,8 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bg_color">#A8DBFF</color>
+    <color name="bg_color">#E8EAF6</color>
     <color name="cardViewBgColor">#FFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="rippleColor">#D7D7D7</color>
+    <color name="customDialogColor">#ffffff</color>
+    <color name="borderColor">#000000</color>
+    <color name="customDialogColorForButton">#FFFFFF</color>
 </resources>

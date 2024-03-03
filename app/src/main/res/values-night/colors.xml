@@ -10,4 +10,7 @@
     <color name="bg_color">#181F24</color>
     <color name="cardViewBgColor">#F6F6F6</color>
     <color name="rippleColor">#404040</color>
+    <color name="customDialogColor">#333333</color>
+    <color name="borderColor">#FFFFFF</color>
+    <color name="customDialogColorForButton">#000000</color>
 </resources>

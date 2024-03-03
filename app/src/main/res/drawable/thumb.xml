@@ -8,7 +8,7 @@
             <item android:top="5dp" android:right="5dp" android:bottom="5dp" android:left="3dp">
                 <shape android:shape="oval">
                     <solid android:color="#FCF3BB"/>
-                    <size android:width="30dp" android:height="30dp"/>
+                    <size android:width="40dp" android:height="40dp"/>
                 </shape>
             </item>
             <item android:drawable="@drawable/ic_light_mode"
@@ -21,10 +21,10 @@
     <item android:state_checked="false">
         <layer-list>
             <!-- Background Oval Shape -->
-            <item android:top="3dp" android:right="3dp" android:bottom="3dp" android:left="3dp">
+            <item android:top="5dp" android:right="5dp" android:bottom="5dp" android:left="5dp">
                 <shape android:shape="oval">
                     <solid android:color="#030303"/>
-                    <size android:width="30dp" android:height="30dp"/>
+                    <size android:width="40dp" android:height="40dp"/>
                 </shape>
             </item>
             <!-- Image Icon -->
