@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.tictacgo.databinding.CustomDialogSettingsBinding
 
@@ -44,9 +45,9 @@ class CustomDialogSetting(context: Context) : Dialog(context) {
             editor.apply()
         }
 
-        dialogBinding.btnHome.setOnClickListener {
-            val intent = Intent(context, MainActivity::class.java)
-            context.startActivity(intent)
+        dialogBinding.btnExit.setOnClickListener {
+            val activity = context as AppCompatActivity
+            activity.finishAffinity();
         }
     }
 

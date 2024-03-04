@@ -65,7 +65,7 @@
 
             <com.github.nikartm.button.FitButton
                 android:layout_margin="5dp"
-                android:id="@+id/btnHome"
+                android:id="@+id/btnExit"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 app:fb_rippleColor="@color/rippleColor"
@@ -73,7 +73,7 @@
                 app:fb_borderColor="@color/borderColor"
                 app:fb_borderWidth="2dp"
                 app:fb_cornerRadius="100dp"
-                app:fb_icon="@drawable/ic_home"
+                app:fb_icon="@drawable/ic_logout"
                 android:gravity="center"
                 app:fb_iconHeight="85dp"
                 />

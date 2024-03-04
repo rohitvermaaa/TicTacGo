@@ -3,7 +3,9 @@ package com.example.tictacgo
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.tictacgo.databinding.ActivityGamescreenBinding
@@ -50,10 +52,12 @@ class GamescreenActivity : AppCompatActivity() {
                     board[0] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
         binding.cell2.setOnClickListener {
+            println(board)
             if (board[1] == 2) {
                 if (chance == 1) {
                     binding.cell2x.visibility = View.VISIBLE
@@ -65,6 +69,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[1] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
@@ -80,6 +85,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[2] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
@@ -95,6 +101,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[3] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
@@ -110,6 +117,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[4] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
@@ -125,6 +133,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[5] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
@@ -140,6 +149,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[6] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
@@ -155,6 +165,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[7] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
 
@@ -170,6 +181,7 @@ class GamescreenActivity : AppCompatActivity() {
                     board[8] = 0
                 }
                 updateChanceImage()
+                checkWinner()
             }
         }
     }
@@ -188,24 +200,21 @@ class GamescreenActivity : AppCompatActivity() {
     }
 
     private fun resetBoardUI() {
-        binding.cell1x.visibility = View.INVISIBLE
-        binding.cell1o.visibility = View.INVISIBLE
-        binding.cell2x.visibility = View.INVISIBLE
-        binding.cell2o.visibility = View.INVISIBLE
-        binding.cell3x.visibility = View.INVISIBLE
-        binding.cell3o.visibility = View.INVISIBLE
-        binding.cell4x.visibility = View.INVISIBLE
-        binding.cell4o.visibility = View.INVISIBLE
-        binding.cell5x.visibility = View.INVISIBLE
-        binding.cell5o.visibility = View.INVISIBLE
-        binding.cell6x.visibility = View.INVISIBLE
-        binding.cell6o.visibility = View.INVISIBLE
-        binding.cell7x.visibility = View.INVISIBLE
-        binding.cell7o.visibility = View.INVISIBLE
-        binding.cell8x.visibility = View.INVISIBLE
-        binding.cell8o.visibility = View.INVISIBLE
-        binding.cell9x.visibility = View.INVISIBLE
-        binding.cell9o.visibility = View.INVISIBLE
+        val cells = listOf(
+            binding.cell1x, binding.cell1o,
+            binding.cell2x, binding.cell2o,
+            binding.cell3x, binding.cell3o,
+            binding.cell4x, binding.cell4o,
+            binding.cell5x, binding.cell5o,
+            binding.cell6x, binding.cell6o,
+            binding.cell7x, binding.cell7o,
+            binding.cell8x, binding.cell8o,
+            binding.cell9x, binding.cell9o
+        )
+
+        cells.forEach { cell ->
+            cell.visibility = View.INVISIBLE
+        }
     }
 
     private fun updateChanceImage(){
@@ -228,6 +237,79 @@ class GamescreenActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun checkWinner(){
+        // Check rows
+        for (i in 0 until 9 step 3){
+            if (board[i] != defaultCellValue && board[i] == board[i + 1] && board[i] == board[i + 2]){
+                showWinner(board[i])
+                for (x in board.indices){
+                    board[x] = 2
+                }
+                return
+            }
+        }
+
+        // Check columns
+        for (i in 0 until 3){
+            if (board[i] != defaultCellValue && board[i] == board[i + 3] && board[i] == board[i + 6]){
+                showWinner(board[i])
+                for (x in board.indices){
+                    board[x] = 2
+                }
+                return
+            }
+        }
+
+        // Check diagonals
+        if (board[0] != defaultCellValue && board[0] == board[4] && board[0] == board[8]){
+            showWinner(board[0])
+            for (x in board.indices){
+                board[x] = 2
+            }
+            return
+        }
+        if (board[2] != defaultCellValue && board[2] == board[4] && board[2] == board[6]){
+            showWinner(board[2])
+            for (x in board.indices){
+                board[x] = 2
+            }
+            return
+        }
+
+        // Check for a tie
+        if (board.none { it == defaultCellValue }) {
+            showDraw()
+            for (x in board.indices){
+                board[x] = 2
+            }
+            return
+        }
+    }
+
+    private fun showWinner(player: Int) {
+        if (player == 0) {noOf0wins++}
+        else {noOfXWins++
+            chance = 1 - chance }
+        resetBoardUI()
+        updateScoreText()
+    }
+
+    private fun showDraw() {
+        noOfDraws++
+        updateScoreText()
+        resetBoardUI()
+    }
+
+    private fun updateBoardUI() {
+        for (i in board.indices) {
+            when (board[i]) {
+                0 -> setOVisibility(i)
+                1 -> setXVisibility(i)
+                else -> clearCellVisibility(i)
+            }
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         applyUIModeFromPreferences()
@@ -241,16 +323,6 @@ class GamescreenActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-    }
-
-    private fun updateBoardUI() {
-        for (i in board.indices) {
-            when (board[i]) {
-                0 -> setOVisibility(i)
-                1 -> setXVisibility(i)
-                else -> clearCellVisibility(i)
-            }
         }
     }
 
