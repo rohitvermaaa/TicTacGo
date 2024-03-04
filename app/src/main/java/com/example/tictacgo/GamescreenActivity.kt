@@ -2,10 +2,12 @@ package com.example.tictacgo
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Color
+import android.graphics.Color.parseColor
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
+import android.os.Looper
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.tictacgo.databinding.ActivityGamescreenBinding
@@ -21,6 +23,7 @@ class GamescreenActivity : AppCompatActivity() {
     private val defaultCellValue = 2  // Default value for an empty cell
     private val board = IntArray(9) { defaultCellValue }  // board state
     var chance : Int = 1    //0 mean O and 1 mean X 2 mean empty
+    private val handler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -287,17 +290,25 @@ class GamescreenActivity : AppCompatActivity() {
     }
 
     private fun showWinner(player: Int) {
-        if (player == 0) {noOf0wins++}
-        else {noOfXWins++
-            chance = 1 - chance }
-        resetBoardUI()
+        if (player == 0) {
+            noOf0wins++
+        }
+        else {
+            noOfXWins++
+            chance = 1 - chance
+        }
         updateScoreText()
+        handler.postDelayed({
+            resetBoardUI()
+        }, 300)
     }
 
     private fun showDraw() {
         noOfDraws++
         updateScoreText()
-        resetBoardUI()
+        handler.postDelayed({
+            resetBoardUI()
+        }, 300)
     }
 
     private fun updateBoardUI() {
