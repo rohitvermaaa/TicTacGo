@@ -2,8 +2,7 @@ package com.example.tictacgo
 
 import android.app.Dialog
 import android.content.Context
-import android.content.Intent
-import android.os.Bundle
+import android.media.MediaPlayer
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -12,6 +11,8 @@ import com.example.tictacgo.databinding.CustomDialogSettingsBinding
 class CustomDialogSetting(context: Context) : Dialog(context) {
     private var dialogBinding: CustomDialogSettingsBinding =
         CustomDialogSettingsBinding.inflate(layoutInflater)
+
+    private var mediaPlayer: MediaPlayer? = null
 
     init {
         setContentView(dialogBinding.root)
@@ -36,6 +37,7 @@ class CustomDialogSetting(context: Context) : Dialog(context) {
             val editor = sharedPrefs.edit()
             editor.putBoolean("isSoundOn", false)
             editor.apply()
+            stopMusic()
         }
 
         dialogBinding.btnSoundOff.setOnClickListener {
@@ -43,6 +45,7 @@ class CustomDialogSetting(context: Context) : Dialog(context) {
             val editor = sharedPrefs.edit()
             editor.putBoolean("isSoundOn", true)
             editor.apply()
+            playMusic()
         }
 
         dialogBinding.btnExit.setOnClickListener {
@@ -72,4 +75,16 @@ class CustomDialogSetting(context: Context) : Dialog(context) {
             dialogBinding.btnSoundOff.visibility = View.VISIBLE
         }
     }
+
+    private fun playMusic() {
+        mediaPlayer = MediaPlayer.create(context, R.raw.music)
+        mediaPlayer?.isLooping = true
+        mediaPlayer?.start()
+    }
+
+    private fun stopMusic() {
+        mediaPlayer?.release()
+        mediaPlayer = null
+    }
+
 }
