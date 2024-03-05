@@ -5,21 +5,9 @@
     android:layout_height="wrap_content"
     android:background="@color/customDialogColor"
     android:orientation="vertical"
+    android:padding="15dp"
     android:gravity="center"
     >
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/uiModeSwitchCompat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumb="@drawable/thumb"
-            android:enabled="true"
-            app:track="@drawable/track"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="5dp"/>
-
 
         <LinearLayout
                 android:layout_width="wrap_content"
@@ -45,7 +33,7 @@
                         app:fb_cornerRadius="100dp"
                         app:fb_icon="@drawable/ic_mute"
                         android:gravity="center"
-                        android:visibility="invisible"
+                        android:visibility="visible"
                         app:fb_iconHeight="85dp"/>
 
                     <com.github.nikartm.button.FitButton
@@ -59,7 +47,7 @@
                         app:fb_cornerRadius="100dp"
                         app:fb_icon="@drawable/ic_sound"
                         android:gravity="center"
-                        android:visibility="visible"
+                        android:visibility="invisible"
                         app:fb_iconHeight="85dp"/>
                 </FrameLayout>
 

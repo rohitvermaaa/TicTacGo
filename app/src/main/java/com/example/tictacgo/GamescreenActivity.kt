@@ -2,8 +2,6 @@ package com.example.tictacgo
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.graphics.Color
-import android.graphics.Color.parseColor
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -39,7 +37,39 @@ class GamescreenActivity : AppCompatActivity() {
         binding.btnSetting.setOnClickListener {
             showSettingsDialog()
         }
+
         clickListeners()
+
+        // Set UI mode switch state
+        binding.uiModeSwitchCompat.isChecked = isDarkModeEnabled()
+
+        binding.uiModeSwitchCompat.setOnCheckedChangeListener { _, isChecked ->
+            updateUIMode(isChecked)
+        }
+
+        // Initialize board and chance if savedInstanceState is null
+        if (savedInstanceState == null) {
+            resetBoardUI()
+        } else {
+            restoreBoardState(savedInstanceState)
+        }
+    }
+
+
+    private fun isDarkModeEnabled(): Boolean {
+        return sharedPrefs.getBoolean("isDarkMode", false)
+    }
+
+    private fun updateUIMode(isDarkMode: Boolean) {
+        val editor = sharedPrefs.edit()
+        editor.putBoolean("isDarkMode", isDarkMode)
+        editor.apply()
+
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 
     private fun clickListeners() {
@@ -426,3 +456,4 @@ class GamescreenActivity : AppCompatActivity() {
         }
     }
 }
+
